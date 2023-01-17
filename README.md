@@ -18,4 +18,4 @@ samples, guidance on mobile development, and a full API reference.
 
 # Here are the screenshot
 
-<img src = "/assets/screen3.png" width ="200" /> <img src = "/assets/screen3.png" width ="200" />
+<img src = "/assets/screen1.png" width ="200" /> <img src = "/assets/screen2.png" width ="200" /><img src = "/assets/screen4.png" width ="200" />
