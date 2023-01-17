@@ -15,6 +15,9 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 *Here are the screens*
 ![Markdown Logo](/assets/screen1.png)
-![Markdown Logo](/assets/screen1.png)
-![Markdown Logo](/assets/screen1.png)
-![Markdown Logo](/assets/screen1.png)
+
+![Markdown Logo](/assets/screen2.png)
+
+![Markdown Logo](/assets/screen3.png)
+
+![Markdown Logo](/assets/screen4.png)
