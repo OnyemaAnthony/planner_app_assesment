@@ -6,6 +6,7 @@ import 'package:planner_app/di/injection.dart';
 import 'package:planner_app/models/task/task_request.dart';
 import 'package:planner_app/screens/add_task_textfield.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:planner_app/utils/utilities.dart';
 import '../models/category/category_response.dart';
 import 'package:intl/intl.dart';
 
@@ -257,6 +258,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                                     'Category_Id_here'),
                                 name: CategoryId(stringValue: titleController.text)));
                         getIt<TaskBloc>().add(UpdateTaskEvent(task));
+                        Utilities.showToast('Task Updated successfully');
+                        Navigator.of(context).pop();
 
                       }else{
                         String date = '${dateController.text.split(' ')[0]}${dateController.text.split(' ')[1]}${dateController.text.split(' ')[2]}';
@@ -270,6 +273,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                                     'Category_Id_here'),
                                 name: CategoryId(stringValue: titleController.text)));
                         getIt<TaskBloc>().add(AddTaskEvent(task));
+                        Utilities.showToast('Task Added successfully');
+                        Navigator.of(context).pop();
 
                       }
                     }
