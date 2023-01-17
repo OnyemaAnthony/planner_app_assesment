@@ -21,8 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    String completedLength = '';
-    String inCompleteLength='';
     return BlocProvider(
       create: (context) => getIt<TaskBloc>()..add(GetAllTaskEvent()),
       child: Scaffold(
@@ -70,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(
                       height: 5,
                     ),
-                    Text('$inCompleteLength incomplete, $completedLength completed',
+                    Text('5 incomplete, 5 completed',
                         style: GoogleFonts.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
@@ -94,89 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: BlocBuilder<TaskBloc, TaskState>(
           builder: (context, state) {
             if (state is TaskLoadedState) {
-              List<Document> completed = state.tasks
-                  .where((element) => element.fields!.isCompleted!.booleanValue == true)
-                  .toList();
-
-              List<Document> inCompleted = state.tasks
-                  .where((element) => element.fields!.isCompleted!.booleanValue == false)
-                  .toList();
-              completedLength = completed.length.toString();
-              inCompleteLength= inCompleted.length.toString();
-              print('the length ${completedLength} ${inCompleteLength}');
-              return Container(
-                margin: const EdgeInsets.only(left: 10, right: 10),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ListView.builder(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: inCompleted.length,
-                          itemBuilder: (context, index) {
-                            final inCompletedTask = inCompleted[index];
-
-                            if (index == 0) {
-                              return Text('Incomplete',
-                                  style: GoogleFonts.inter(
-                                      color: const Color(0xff575767),
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 18));
-                            }
-                            return TaskListItem(
-                              onTap: (){
-                                Utilities.push(context, AddTaskScreen(isUpdate: true,task: inCompletedTask,));
-
-                              },
-                              update: (){
-                                TaskRequest task = TaskRequest(
-                                    field: Field(
-                                        date: Date(integerValue: inCompletedTask.fields!.date!.integerValue),
-                                        isCompleted: IsCompleted(booleanValue: true),
-                                        categoryId: CategoryId(
-                                            stringValue:inCompletedTask.fields!.categoryId!.stringValue),
-                                        name: CategoryId(stringValue:inCompletedTask.fields!.name!.stringValue!)));
-                                getIt<TaskBloc>().add(UpdateTaskEvent(task));
-                                Utilities.showToast('Tasks Completed');
-                              },
-                              isChecked: false,
-                              title: inCompletedTask.fields?.name!.stringValue,
-                              subTitle: '💰 Finance',
-                            );
-                          }),
-                      Container(
-                        margin: const EdgeInsets.only(top: 20),
-                        child: ListView.builder(
-                            shrinkWrap: true,
-                            itemCount: completed.length,
-                            physics: const NeverScrollableScrollPhysics(),
-                            itemBuilder: (context, index) {
-                              final completedTasks = completed[index];
-
-                              if (index == 0) {
-                                return Text('Completed',
-                                    style: GoogleFonts.inter(
-                                        color: const Color(0xff575767),
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 18));
-                              }
-                              return GestureDetector(
-                                onTap: (){
-                                  Utilities.push(context, AddTaskScreen(isUpdate: true,task: completedTasks,));
-                                },
-                                child: TaskListItem(
-                                  isChecked: true,
-                                  title: completedTasks.fields!.name==null?'New todo': completedTasks.fields!.name!.stringValue??'',
-                                  subTitle: '💰 Finance',
-                                ),
-                              );
-                            }),
-                      ),
-                    ],
-                  ),
-                ),
-              );
+             return TasksList(data: state.tasks);
             } else if (state is TaskLoadingState) {
               return const Center(
                 child: CircularProgressIndicator(),
