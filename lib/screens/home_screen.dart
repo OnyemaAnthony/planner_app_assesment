@@ -18,10 +18,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String completedLength = '';
-  String inCompleteLength='';
+
   @override
   Widget build(BuildContext context) {
+    String completedLength = '';
+    String inCompleteLength='';
     return BlocProvider(
       create: (context) => getIt<TaskBloc>()..add(GetAllTaskEvent()),
       child: Scaffold(
