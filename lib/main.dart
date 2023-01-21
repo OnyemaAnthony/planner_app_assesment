@@ -14,7 +14,6 @@ import 'models/user/user_request.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Di.initialize(cacheImpl: CacheImpl());
- //  Setup.setUp();
   runApp(const MyApp());
 
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
