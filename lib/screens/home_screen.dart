@@ -33,7 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
             flexibleSpace: SafeArea(
               child: Container(
                 margin: const EdgeInsets.all(10),
-                // color: Colors.red,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
