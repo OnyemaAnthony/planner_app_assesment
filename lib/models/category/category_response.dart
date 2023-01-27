@@ -13,9 +13,9 @@ class CategoryResponse {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.documents != null) {
-      data['documents'] = this.documents!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (documents != null) {
+      data['documents'] = documents!.map((v) => v.toJson()).toList();
     }
     return data;
   }
