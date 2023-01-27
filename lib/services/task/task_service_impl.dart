@@ -18,8 +18,7 @@ class TaskServiceImpl extends BaseApi implements TaskService {
 
   @override
   Future<TaskResponse> getAllTasks() async {
-    final response = await get(
-        'https://firestore.googleapis.com/v1/projects/applaudo-todo-app/databases/(default)/documents/tasks');
+    final response = await get('https://firestore.googleapis.com/v1/projects/applaudo-todo-app/databases/(default)/documents/tasks');
     return TaskResponse.fromJson(response);
   }
 
@@ -28,7 +27,6 @@ class TaskServiceImpl extends BaseApi implements TaskService {
     String url = 'https://firestore.googleapis.com/v1/projects/applaudo-todo-app/databases/(default)/documents/tasks/OdFN2DdAlBXPsny3KUAP';
 
     final response = await patch(url, body: task.toJson());
-    print('updated');
     return TaskRequest.fromJson(response);
   }
 }
