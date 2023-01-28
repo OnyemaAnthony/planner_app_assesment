@@ -56,17 +56,17 @@ class Fields {
   Fields({this.name, this.color});
 
   Fields.fromJson(Map<String, dynamic> json) {
-    name = json['name'] != null ? new Name.fromJson(json['name']) : null;
-    color = json['color'] != null ? new Name.fromJson(json['color']) : null;
+    name = json['name'] != null ? Name.fromJson(json['name']) : null;
+    color = json['color'] != null ? Name.fromJson(json['color']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.name != null) {
-      data['name'] = this.name!.toJson();
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    if (name != null) {
+      data['name'] = name!.toJson();
     }
-    if (this.color != null) {
-      data['color'] = this.color!.toJson();
+    if (color != null) {
+      data['color'] = color!.toJson();
     }
     return data;
   }
