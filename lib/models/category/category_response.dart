@@ -32,7 +32,7 @@ class Documents {
   Documents.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     fields =
-    json['fields'] != null ? new Fields.fromJson(json['fields']) : null;
+    json['fields'] != null ? Fields.fromJson(json['fields']) : null;
     createTime = json['createTime'];
     updateTime = json['updateTime'];
   }
