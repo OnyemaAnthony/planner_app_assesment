@@ -17,7 +17,6 @@ class TaskRepositoryImpl implements TaskRepository{
     return apiInterceptor(() => _taskService.addTask(task));
 
   }
-
   @override
   Future<Either<ApiRequestFailure,TaskResponse>> getAllTasks() {
     return apiInterceptor(() => _taskService.getAllTasks());
@@ -27,5 +26,4 @@ class TaskRepositoryImpl implements TaskRepository{
   Future<Either<ApiRequestFailure, TaskRequest>> updateTask(TaskRequest task) {
     return apiInterceptor(() => _taskService.updateTask(task));
   }
-
 }
