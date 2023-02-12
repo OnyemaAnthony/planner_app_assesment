@@ -6,7 +6,6 @@ import 'di/injection.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await Di.initialize(cacheImpl: CacheImpl());
   runApp(const MyApp());
 
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
