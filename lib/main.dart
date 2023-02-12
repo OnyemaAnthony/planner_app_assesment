@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:planner_app/screens/home_screen.dart';
-import 'package:planner_app/services/cache/cache_impl.dart';
-import 'di/injection.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
