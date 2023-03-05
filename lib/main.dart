@@ -4,7 +4,7 @@ import 'package:planner_app/screens/home_screen.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  runApp( MyApp());
 
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
