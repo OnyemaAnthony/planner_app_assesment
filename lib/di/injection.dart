@@ -23,8 +23,7 @@ import '../services/cache/cache.dart';
 
 final getIt = GetIt.instance;
 class Di{
-  static Future<void> initialize({required Cache cacheImpl})async{
-    getIt.registerLazySingleton<Cache>(() => cacheImpl);
+  static Future<void> initialize()async{
     getIt.registerFactory(() => TaskBloc());
     getIt.registerFactory(() => CategoryBloc());
 
