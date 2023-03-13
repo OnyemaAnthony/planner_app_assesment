@@ -259,7 +259,6 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                                 name: CategoryId(stringValue: titleController.text)));
                         getIt<TaskBloc>().add(UpdateTaskEvent(task));
                         Utilities.showToast('Task Updated successfully');
-                        Navigator.of(context).pop();
 
                       }else{
                         String date = '${dateController.text.split(' ')[0]}${dateController.text.split(' ')[1]}${dateController.text.split(' ')[2]}';

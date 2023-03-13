@@ -24,4 +24,5 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
       emit(CategoriesLoadedState(r.documents!));
     });
   }
+
 }
