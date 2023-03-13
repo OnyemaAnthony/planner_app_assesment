@@ -272,7 +272,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                                     'Category_Id_here'),
                                 name: CategoryId(stringValue: titleController.text)));
                         getIt<TaskBloc>().add(AddTaskEvent(task));
-                        Utilities.showToast('Task Added successfully');
+                        Utilities.showToast('Task Added');
                         Navigator.of(context).pop();
 
                       }
