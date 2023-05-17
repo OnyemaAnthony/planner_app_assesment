@@ -11,7 +11,8 @@ void main(){
   late TaskRepository taskRepository;
   late AddTaskCase addTaskCase;
 
-  test('Add Task  Test- verify that the repo layer is being called', () async {
+  test('Add Task  Test- verify that the repository'
+      ' layer is being called', () async {
     taskRepository = MockTaskRepository();
     addTaskCase = AddTaskCase(taskRepository);
 
