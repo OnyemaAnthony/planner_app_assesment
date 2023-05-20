@@ -1,6 +1,9 @@
 part of 'task_bloc.dart';
 
 abstract class TaskEvent extends Equatable {
+
+  @override
+  List<Object?> get props => [];
   const TaskEvent();
 }
 class AddTaskEvent extends TaskEvent{
@@ -8,8 +11,6 @@ class AddTaskEvent extends TaskEvent{
 
   const AddTaskEvent(this.task);
 
-  @override
-  List<Object?> get props => [];
 }
 
 class GetAllTaskEvent extends TaskEvent{
@@ -21,6 +22,5 @@ class UpdateTaskEvent extends TaskEvent{
   final TaskRequest request;
 
   const UpdateTaskEvent(this.request);
-  @override
-  List<Object?> get props => [];
+
 }
