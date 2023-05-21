@@ -19,8 +19,6 @@ import 'package:planner_app/usecase/task/get_all_task_case.dart';
 import 'package:planner_app/usecase/task/update_task_case.dart';
 import 'package:planner_app/usecase/user/login_user_case.dart';
 
-import '../services/cache/cache.dart';
-
 final getIt = GetIt.instance;
 class Di{
   static Future<void> initialize()async{
