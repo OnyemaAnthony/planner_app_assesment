@@ -8,7 +8,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
 
-# build by specifying --build-name and --build-number, respectively.
+
 
 
 # In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
